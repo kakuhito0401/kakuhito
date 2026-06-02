@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAKUHITO | 花野洋介 ─ 編集者・コピーライター・ライター講師</title>
+<meta name="description" content="福岡を拠点に活動するフリーランス編集者・コピーライターの花野洋介（KAKUHITO）。1,000本超の記事実績、100名超のライター育成経験。取材・キャッチコピー・ライター講座のご依頼はこちら。">
+<meta name="keywords" content="コピーライター,編集者,ライター講師,福岡,フリーランス,KAKUHITO,花野洋介,取材,キャッチコピー">
+<meta property="og:title" content="KAKUHITO | 花野洋介 ─ 編集者・コピーライター・ライター講師">
+<meta property="og:description" content="福岡を拠点に活動するフリーランス編集者・コピーライター。1,000本超の実績・100名超のライター育成。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Shippori+Mincho:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --aged: #e8dfc8;
+    --rust: #b5451b;
+    --gold: #c8922a;
+    --muted: #7a6e60;
+    --line: rgba(26,18,8,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--rust);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--rust); }
+
+  .nav-cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.55rem 1.4rem;
+    background: var(--rust);
+    color: var(--paper) !important;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--ink) !important; color: var(--paper) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 70px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 8rem 3rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--rust);
+  }
+
+  .hero-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name-en {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+  }
+
+  .hero-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-role {
+    font-size: 0.88rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .hero-role::before {
+    content: '─';
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--rust);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--rust); transform: translateY(-2px); }
+
+  .btn-secondary {
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18vw;
+    color: rgba(26,18,8,0.04);
+    letter-spacing: -0.05em;
+    user-select: none;
+    line-height: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+
+  .hero-img-frame {
+    position: relative;
+    z-index: 2;
+    width: 340px;
+    height: 440px;
+  }
+
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: -16px;
+    bottom: -16px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, var(--aged) 0%, #d4c9b0 100%);
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-img-placeholder::after {
+    content: '花野 洋介';
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.4em;
+    color: var(--muted);
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: var(--aged);
+    padding: 0.3rem 1rem;
+  }
+
+  .hero-avatar-icon {
+    font-size: 5rem;
+    opacity: 0.3;
+  }
+
+  .hero-location {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 3;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 7rem 5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 4rem;
+    color: rgba(26,18,8,0.08);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+  }
+
+  .section-title span {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 0.65em;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--aged);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #about::before {
+    content: 'ABOUT';
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'DM Serif Display', serif;
+    font-size: 8rem;
+    color: rgba(26,18,8,0.04);
+    letter-spacing: 0.2em;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-body p {
+    font-size: 0.95rem;
+    line-height: 2.2;
+    color: #3a3028;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .timeline-item:first-child { padding-top: 0; }
+
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--rust);
+    letter-spacing: 0.05em;
+    padding-top: 0.1rem;
+  }
+
+  .timeline-content h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-content p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    position: relative;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--line);
+  }
+
+  .service-card {
+    background: var(--paper);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .service-card:hover { background: var(--ink); }
+  .service-card:hover .service-num,
+  .service-card:hover .service-title,
+  .service-card:hover .service-desc,
+  .service-card:hover .service-tags span { color: var(--paper); }
+  .service-card:hover .service-icon { opacity: 0.1; }
+
+  .service-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--rust);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    display: block;
+  }
+
+  .service-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  .service-desc {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .service-tags span {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    border: 1px solid currentColor;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1px;
+    transition: color 0.3s;
+  }
+
+  /* ── WORKS ── */
+  #works {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  #works .section-title { color: var(--paper); }
+  #works .section-title span { color: var(--muted); }
+
+  .works-filter {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(245,240,232,0.2);
+    color: rgba(245,240,232,0.5);
+    background: transparent;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: all 0.2s;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(245,240,232,0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .work-card:hover { border-color: var(--gold); }
+
+  .work-thumb {
+    height: 180px;
+    background: linear-gradient(135deg, #2a2018, #3a3028);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.5));
+  }
+
+  .work-body {
+    padding: 1.2rem;
+  }
+
+  .work-cat {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .work-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.5;
+  }
+
+  /* ── SITEMAP SECTION ── */
+  #sitemap {
+    background: var(--aged);
+    padding: 7rem 5rem;
+  }
+
+  .sitemap-tree {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .sitemap-col h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--rust);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sitemap-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .sitemap-col ul li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+  }
+
+  .sitemap-col ul li::before {
+    content: '└';
+    color: var(--gold);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .sitemap-col ul li.sub {
+    padding-left: 1rem;
+    font-size: 0.76rem;
+  }
+
+  .sitemap-col ul li.sub::before {
+    content: '·';
+    color: var(--gold);
+  }
+
+  /* ── LESSON ── */
+  #lesson {
+    background: linear-gradient(135deg, #2a1a0a, #1a1208);
+    color: var(--paper);
+    text-align: center;
+    padding: 8rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #lesson::before {
+    content: '講師';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 30vw;
+    color: rgba(255,255,255,0.02);
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .lesson-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .lesson-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.3rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #lesson .section-title {
+    color: var(--paper);
+    margin-bottom: 1.5rem;
+  }
+
+  #lesson .section-title span { color: var(--gold); }
+
+  .lesson-desc {
+    font-size: 0.95rem;
+    line-height: 2;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 3rem;
+  }
+
+  .lesson-points {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .lesson-point {
+    text-align: center;
+  }
+
+  .lesson-point .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .lesson-point .label {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.6);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 7rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contact-left h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .contact-info a {
+    font-size: 0.82rem;
+    color: var(--rust);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .contact-info a:hover { color: var(--ink); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.88rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--rust);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 2.5rem;
+    background: var(--rust);
+    color: var(--paper);
+    border: none;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+
+  .submit-btn:hover { background: var(--ink); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid rgba(245,240,232,0.08);
+  }
+
+  .footer-brand .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand .logo span { color: var(--rust); }
+
+  .footer-brand p {
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.4);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name    { animation-delay: 0.2s; }
+  .hero-name-en { animation-delay: 0.25s; }
+  .hero-roles   { animation-delay: 0.3s; }
+  .hero-desc    { animation-delay: 0.35s; }
+  .hero-stats   { animation-delay: 0.4s; }
+  .hero-btns    { animation-delay: 0.45s; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--aged); }
+  ::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 7rem 2rem 3rem; }
+    .hero-right { display: none; }
+    section, #contact, #sitemap { padding: 5rem 2rem; }
+    .about-grid,
+    .sitemap-tree,
+    #contact { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid,
+    .works-grid { grid-template-columns: 1fr; }
+    .sitemap-tree { grid-template-columns: 1fr 1fr; }
+    footer { grid-template-columns: 1fr; gap: 1.5rem; }
+    .lesson-points { gap: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">KAKU<span>HITO</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">プロフィール</a></li>
+    <li><a href="#services">サービス</a></li>
+    <li><a href="#works">実績</a></li>
+    <li><a href="#lesson">ライター講座</a></li>
+    <li><a href="#sitemap">サイトマップ</a></li>
+    <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">福岡発・フリーランス</p>
+    <h1 class="hero-name">花野 洋介</h1>
+    <p class="hero-name-en">Yosuke Hanano / KAKUHITO</p>
+    <div class="hero-roles">
+      <p class="hero-role">編集者</p>
+      <p class="hero-role">コピーライター</p>
+      <p class="hero-role">ライター講師</p>
+    </div>
+    <p class="hero-desc">
+      「書く」を仕事にしたい人のそばに。<br>
+      1,000本超の記事制作と100名超のライター育成で培った言葉の力を、あなたのビジネスへ。
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">1,000<small style="font-size:1rem">+</small></span>
+        <span class="stat-label">記事制作実績</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100<small style="font-size:1rem">+</small></span>
+        <span class="stat-label">ライター育成数</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">8<small style="font-size:1rem">年</small></span>
+        <span class="stat-label">フリーランス歴</span>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#works" class="btn-primary">実績を見る</a>
+      <a href="#contact" class="btn-secondary">依頼する</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-bg-text">KH</div>
+    <div class="hero-img-frame">
+      <div class="hero-img-placeholder">
+        <span class="hero-avatar-icon">✒️</span>
+      </div>
+    </div>
+    <p class="hero-location">📍 福岡県福岡市</p>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">
+      <span>About</span>
+      プロフィール
+    </h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>1978年、広島県生まれ。2016年から福岡を中心にフリーランスの編集者・コピーライターとして活動をスタートしました。Webメディアや紙媒体を問わず、編集・キャッチコピー制作・執筆（取材）で携わった記事は1,000本を超えます。</p>
+      <p>ライターコミュニティの運営経験もあり、ディレクション・ライター管理・広報責任者なども担当。2022年4月にKAKUHITO（カクヒト）を設立しました。</p>
+      <p>2019年からは後進ライター育成と自身のフィードバックを兼ね、ストアカや個別でライター養成講座をスタート。これまで100名以上のライター志望者にライティング技術を指導してきました。</p>
+      <p>文豪をモチーフにしたオリジナルTシャツも制作中（花野洋介商店）。</p>
+    </div>
+    <div class="about-timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">1978</span>
+        <div class="timeline-content">
+          <h4>広島県生まれ</h4>
+          <p>元メンズエステ店長という異色のキャリアを経て、言葉の世界へ。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2016</span>
+        <div class="timeline-content">
+          <h4>フリーランス活動スタート</h4>
+          <p>福岡を中心に編集者・コピーライターとして独立。WebメディアPR・紙媒体等、幅広い媒体で活動開始。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2019</span>
+        <div class="timeline-content">
+          <h4>ライター養成講座スタート</h4>
+          <p>ストアカ・個別指導でライター志望者の育成を本格化。100名超を指導。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022</span>
+        <div class="timeline-content">
+          <h4>KAKUHITO 設立</h4>
+          <p>編集・コピーライティング・ライター育成を軸に法人化。地域活性化プロジェクトにも注力。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">
+      <span>Services</span>
+      サービス一覧
+    </h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-num">No.01</span>
+      <span class="service-icon">✒️</span>
+      <h3 class="service-title">キャッチコピー制作</h3>
+      <p class="service-desc">商品・サービスの本質を一言で刺す。ブランドの言語化から広告コピーまで、記憶に残る言葉を届けます。</p>
+      <div class="service-tags">
+        <span>LP・広告</span><span>ブランディング</span><span>商品名</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">No.02</span>
+      <span class="service-icon">📝</span>
+      <h3 class="service-title">編集・執筆</h3>
+      <p class="service-desc">WebメディアからPR記事まで、読者の心を動かすコンテンツを制作。SEO対応・1,000本超の実績あり。</p>
+      <div class="service-tags">
+        <span>Webメディア</span><span>PR記事</span><span>コラム</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">No.03</span>
+      <span class="service-icon">🎤</span>
+      <h3 class="service-title">取材・インタビュー</h3>
+      <p class="service-desc">人・企業・地域の「語られていない物語」を掘り起こす取材執筆。構成から納品まで一貫対応。</p>
+      <div class="service-tags">
+        <span>人物取材</span><span>企業PR</span><span>地域特集</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">No.04</span>
+      <span class="service-icon">🎓</span>
+      <h3 class="service-title">ライター講師</h3>
+      <p class="service-desc">100名超の育成実績。初心者〜中級者向けのライター養成講座。オンライン・個別対応可能。</p>
+      <div class="service-tags">
+        <span>個別指導</span><span>ストアカ</span><span>法人研修</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">No.05</span>
+      <span class="service-icon">🗾</span>
+      <h3 class="service-title">地域活性化支援</h3>
+      <p class="service-desc">地域の魅力を言語化し、外へ届ける。観光・移住促進・地域ブランディングの編集・PR支援。</p>
+      <div class="service-tags">
+        <span>観光PR</span><span>移住促進</span><span>自治体</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">No.06</span>
+      <span class="service-icon">📦</span>
+      <h3 class="service-title">パッケージ販売</h3>
+      <p class="service-desc">記事本数・コピー本数をセットにしたお得なパッケージプラン。継続的なコンテンツ制作に最適。</p>
+      <div class="service-tags">
+        <span>月額プラン</span><span>記事セット</span><span>スタートアップ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WORKS ── -->
+<section id="works">
+  <div class="section-header">
+    <span class="section-num" style="color:rgba(245,240,232,0.06)">03</span>
+    <h2 class="section-title">
+      <span>Works</span>
+      制作実績
+    </h2>
+  </div>
+  <div class="works-filter">
+    <button class="filter-btn active">すべて</button>
+    <button class="filter-btn">キャッチコピー</button>
+    <button class="filter-btn">編集・執筆</button>
+    <button class="filter-btn">取材</button>
+    <button class="filter-btn">地域活性化</button>
+    <button class="filter-btn">ロゴ制作</button>
+  </div>
+  <div class="works-grid">
+    <div class="work-card">
+      <div class="work-thumb">✒️</div>
+      <div class="work-body">
+        <p class="work-cat">キャッチコピー</p>
+        <h3 class="work-title">飲食店ブランドリニューアル<br>キャッチコピー制作</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb">📰</div>
+      <div class="work-body">
+        <p class="work-cat">編集・執筆</p>
+        <h3 class="work-title">Webメディア<br>コラム連載・月10本執筆</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb">🎤</div>
+      <div class="work-body">
+        <p class="work-cat">取材</p>
+        <h3 class="work-title">経営者インタビュー<br>連載特集記事</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb">🗾</div>
+      <div class="work-body">
+        <p class="work-cat">地域活性化</p>
+        <h3 class="work-title">長崎の変<br>地域PR参加プロジェクト</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb">👕</div>
+      <div class="work-body">
+        <p class="work-cat">ブランド</p>
+        <h3 class="work-title">文豪Tシャツ<br>花野洋介商店</h3>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb">🎓</div>
+      <div class="work-body">
+        <p class="work-cat">講師</p>
+        <h3 class="work-title">ライター養成講座<br>100名超 育成実績</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LESSON ── -->
+<section id="lesson">
+  <div class="lesson-inner">
+    <span class="lesson-badge">WRITER'S SCHOOL</span>
+    <h2 class="section-title" style="font-family:'Shippori Mincho',serif;font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1rem;">
+      <span>Lesson</span>
+      ライター養成講座
+    </h2>
+    <p class="lesson-desc">
+      「書くこと」を仕事にしたい方へ。初心者からでも実践的に学べる、少人数・個別指導のライター養成講座。現役コピーライターから直接フィードバックを受けながら、実戦力を身につけます。
+    </p>
+    <div class="lesson-points">
+      <div class="lesson-point">
+        <p class="num">100<small style="font-size:1.2rem">名+</small></p>
+        <p class="label">受講生実績</p>
+      </div>
+      <div class="lesson-point">
+        <p class="num">8<small style="font-size:1.2rem">年</small></p>
+        <p class="label">指導歴</p>
+      </div>
+      <div class="lesson-point">
+        <p class="num">個別</p>
+        <p class="label">マンツーマン対応</p>
+      </div>
+    </div>
+    <a href="#contact" class="btn-primary" style="display:inline-block;">講座について問い合わせる</a>
+  </div>
+</section>
+
+<!-- ── SITEMAP SECTION ── -->
+<section id="sitemap">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">
+      <span>Sitemap</span>
+      サイトマップ
+    </h2>
+  </div>
+  <div class="sitemap-tree">
+    <div class="sitemap-col">
+      <h3>🏠 ホーム</h3>
+      <ul>
+        <li>トップページ（/）</li>
+        <li class="sub">ヒーローセクション</li>
+        <li class="sub">プロフィール概要</li>
+        <li class="sub">実績ハイライト</li>
+        <li class="sub">CTA（お問い合わせ）</li>
+      </ul>
+    </div>
+    <div class="sitemap-col">
+      <h3>👤 プロフィール</h3>
+      <ul>
+        <li>プロフィール（/about）</li>
+        <li class="sub">経歴・ヒストリー</li>
+        <li class="sub">スキル・専門性</li>
+        <li class="sub">メディア掲載歴</li>
+        <li>KAKUHITO（/company）</li>
+        <li class="sub">会社概要</li>
+        <li class="sub">理念・ミッション</li>
+      </ul>
+    </div>
+    <div class="sitemap-col">
+      <h3>💼 サービス</h3>
+      <ul>
+        <li>サービス一覧（/services）</li>
+        <li class="sub">キャッチコピー制作</li>
+        <li class="sub">編集・執筆</li>
+        <li class="sub">取材・インタビュー</li>
+        <li class="sub">地域活性化支援</li>
+        <li class="sub">パッケージ販売</li>
+        <li class="sub">ロゴ制作</li>
+        <li>ライター養成講座（/lesson）</li>
+        <li class="sub">講座内容・料金</li>
+        <li class="sub">受講者の声</li>
+        <li class="sub">申し込みフォーム</li>
+      </ul>
+    </div>
+    <div class="sitemap-col">
+      <h3>📂 実績・その他</h3>
+      <ul>
+        <li>実績一覧（/works）</li>
+        <li class="sub">キャッチコピー</li>
+        <li class="sub">編集・執筆</li>
+        <li class="sub">取材</li>
+        <li class="sub">地域活性化</li>
+        <li>ブログ（/blog）</li>
+        <li class="sub">ライティングTips</li>
+        <li class="sub">仕事の裏側</li>
+        <li>お問い合わせ（/contact）</li>
+        <li>プライバシーポリシー（/privacy）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-left">
+    <h2>お仕事の<br>ご依頼・お問い合わせ</h2>
+    <p>取材・執筆・コピーライティング・ライター講座など、お気軽にご相談ください。基本的に3営業日以内にご返答いたします。</p>
+    <div class="contact-info">
+      <a href="https://twitter.com/Loverock1230" target="_blank">🐦 Twitter @Loverock1230</a>
+      <a href="https://instagram.com/kakuhito0401" target="_blank">📸 Instagram @kakuhito0401</a>
+      <a href="https://www.foriio.com/kakuhito" target="_blank">🗂 foriio ポートフォリオ</a>
+    </div>
+  </div>
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>お名前 *</label>
+        <input type="text" placeholder="山田 太郎">
+      </div>
+      <div class="form-group">
+        <label>会社名</label>
+        <input type="text" placeholder="株式会社〇〇">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>メールアドレス *</label>
+      <input type="email" placeholder="email@example.com">
+    </div>
+    <div class="form-group">
+      <label>ご依頼の種類</label>
+      <select>
+        <option>キャッチコピー制作</option>
+        <option>編集・執筆</option>
+        <option>取材・インタビュー</option>
+        <option>ライター養成講座</option>
+        <option>地域活性化支援</option>
+        <option>その他・まずは相談</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>ご相談内容</label>
+      <textarea rows="5" placeholder="依頼内容・ご質問などをお書きください。"></textarea>
+    </div>
+    <button class="submit-btn">送信する →</button>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">
+    <p class="logo">KAKU<span>HITO</span></p>
+    <p>© 2024 花野洋介 / KAKUHITO. All rights reserved.</p>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#about">プロフィール</a></li>
+    <li><a href="#services">サービス</a></li>
+    <li><a href="#works">実績</a></li>
+    <li><a href="#lesson">講座</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .work-card, .timeline-item, .sitemap-col').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
